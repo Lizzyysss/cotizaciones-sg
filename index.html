@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cotización - Suministros Generales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-header">
+            <h1>Crear Cotización</h1>
+            <div class="quote-header-display">
+                <div class="logo">
+                    <img src="SG.png" alt="Logo Suministros Generales">
+                </div>
+                <!-- Removed "Cotización a:" text from web view -->
+            </div>
+        </div>
+
+        <div class="two-column-layout">
+            <div class="input-column">
+                <h2>Ingresar Datos de Cotización</h2>
+
+                <div class="client-details-input">
+                    <div>
+                        <label for="client-name">Nombre:</label>
+                        <input type="text" id="client-name">
+                    </div>
+                    <div>
+                        <label for="client-address">Dirección:</label>
+                        <input type="text" id="client-address">
+                    </div>
+                    <div>
+                        <label for="client-rtn">RTN:</label>
+                        <input type="text" id="client-rtn">
+                    </div>
+                    <div>
+                        <label for="quote-date">Fecha:</label>
+                        <input type="date" id="quote-date">
+                    </div>
+                    <div>
+                        <label for="general-description">Descripción general:</label>
+                        <input type="text" id="general-description">
+                    </div>
+                </div>
+
+                <h3>Detalles de los Items</h3>
+                <table id="items-table">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Subtotal</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas de items se añadirán aquí con JavaScript -->
+                    </tbody>
+                </table>
+                <button id="add-item-btn">Añadir Item</button>
+            </div>
+
+            <div class="display-column">
+                 <div class="client-details-display">
+                     <p><strong>Nombre:</strong> <span id="client-name-display"></span></p>
+                     <p><strong>Dirección:</strong> <span id="client-address-display"></span></p>
+                     <p><strong>RTN:</strong> <span id="client-rtn-display"></span></p>
+                     <p><strong>Fecha:</strong> <span id="quote-date-display"></span></p>
+                     <p><strong>Descripción general:</strong> <span id="general-description-display"></span></p>
+                 </div>
+
+                <div class="items-display">
+                    <h3>Detalles de los Items</h3>
+                    <div id="items-display-container">
+                        <!-- Item display cards will be added here by JavaScript -->
+                    </div>
+                </div>
+
+                 <div class="summary-display">
+                     <p><strong>Subtotal:</strong> <span id="subtotal-display">0.00</span></p>
+                     <p><strong>Impuesto:</strong> <span id="tax-display">0.00</span></p>
+                     <p><strong>Total:</strong> <span id="total-display">0.00</span></p>
+                 </div>
+
+                 <div class="total-in-words-display">
+                     <p><strong>Total en letras:</strong> <span id="total-words-display"></span></p>
+                 </div>
+
+            </div>
+        </div>
+
+         <button id="generate-pdf-btn">Generar PDF</button>
+     </div>
+
+     <script src="script.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
